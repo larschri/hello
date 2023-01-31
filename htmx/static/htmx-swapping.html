@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<script src="https://unpkg.com/htmx.org@1.8.5"></script>
+<style>
+.htmx-swapping:after {
+	content: "((htmx-swap))";
+}
+</style>
+	</head>
+	<body>
+		<div>This is hx-swapping.html</div>
+		<div hx-swap="innerHTML swap:1s" hx-get="/inner/static.html">Click to get static.html</div>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<script src="https://unpkg.com/htmx.org@1.8.5"></script>
+		<script>
+			htmx.onLoad(function(e) {
+				document.body.addEventListener("myTrigger", function(evt){
+				    alert("myTrigger was triggered! " + evt.detail.value);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div>This is HX-Trigger.html</div>
+		<div hx-get="/trigger">Click to trigger events</div>
+	</body>
+</html>

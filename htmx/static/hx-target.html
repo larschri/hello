@@ -1,0 +1,10 @@
+<html>
+	<head>
+		<script src="https://unpkg.com/htmx.org@1.8.5"></script>
+	</head>
+	<body>
+		<div>This is hx-target.html</div>
+		<div hx-get="/inner/static.html" hx-target="#mytarget">Click to get static.html</div>
+		<div id="mytarget">This is where to load static.hxml</div>
+	</body>
+</html>
