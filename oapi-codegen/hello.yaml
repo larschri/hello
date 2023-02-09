@@ -1,0 +1,26 @@
+openapi: "3.0.0"
+paths:
+  /hello/{name}:
+    get:
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+components:
+  schemas:
+    Message:
+      allOf:
+        - type: object
+          required:
+          - greeting
+          properties:
+            greeting:
+              type: string
