@@ -1,2 +1,4 @@
 jwt/private-key.pem
 jwt/public-key.pem
+.bash_history
+generated.go
