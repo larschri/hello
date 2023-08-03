@@ -28,6 +28,10 @@ func headersHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func refreshHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Add("HX-Refresh", "true")
+}
+
 func slowHandler(w http.ResponseWriter, r *http.Request) {
 	time.Sleep(3 * time.Second)
 	fmt.Fprint(w, `This response took 3 seconds`)
@@ -43,6 +47,7 @@ func main() {
 	http.HandleFunc("/headers", headersHandler)
 	http.HandleFunc("/trigger", triggerHandler)
 	http.HandleFunc("/slow", slowHandler)
+	http.HandleFunc("/refresh", refreshHandler)
 	http.Handle("/", http.FileServer(http.FS(serverRoot)))
 	fmt.Println("http://localhost:8080/")
 	log.Fatal(http.ListenAndServe(":8080", nil))
